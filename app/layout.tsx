@@ -1,9 +1,10 @@
+import { Header } from "@/components/layout/Header";
 import { ApolloProvider } from "@/components/providers/ApolloProvider";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Jost } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const jost = Jost({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Showpo Store Next App",
@@ -17,8 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${inter.className} antialiased`}>
-        <ApolloProvider>{children}</ApolloProvider>
+      <body className={`${jost.className} antialiased`}>
+        <ApolloProvider>
+          <Header />
+          <main>{children}</main>
+        </ApolloProvider>
       </body>
     </html>
   );

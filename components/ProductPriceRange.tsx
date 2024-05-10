@@ -24,7 +24,7 @@ export function ProductPriceRange({
         <p className='text-center text-[15px] font-bold'>
           <span
             className={`mr-3 text-black ${
-              isSameFinalAndRegPrice ? "line-through" : ""
+              !isSameFinalAndRegPrice ? "line-through" : ""
             }`}
           >
             £

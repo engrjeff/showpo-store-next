@@ -1,5 +1,7 @@
 import { ProductFilters } from "@/components/ProductFilters";
 import { ProductListSortSelect } from "@/components/ProductListSortSelect";
+import { ProductPriceRange } from "@/components/ProductPriceRange";
+import { SizeBubbles } from "@/components/SizeBubbles";
 import { getCategories } from "@/services/queries/categories/getCategories";
 import { getCurrentCategory } from "@/services/queries/categories/getCurrentCategory";
 import { getProducts } from "@/services/queries/products/getProducts";
@@ -62,6 +64,14 @@ export default async function CategoryPage({ params }: PageProps) {
                     <h2 className='line-clamp-2 group-hover:underline'>
                       {product.name}
                     </h2>
+                    <ProductPriceRange
+                      category_uid={category.uid}
+                      product_uid={product.uid}
+                    />
+                    <SizeBubbles
+                      category_uid={category.uid}
+                      product_uid={product.uid}
+                    />
                   </div>
                 </Link>
               </li>
